@@ -10,7 +10,7 @@
 package Pod::Usage;
 
 use vars qw($VERSION);
-$VERSION = 1.30;  ## Current version of this package
+$VERSION = 1.31;  ## Current version of this package
 require  5.005;    ## requires this Perl version or later
 
 =head1 NAME
@@ -39,6 +39,9 @@ Pod::Usage, pod2usage() - print a usage message from embedded pod documentation
                -exitval => $exit_status  ,  
                -verbose => $verbose_level,  
                -output  => $filehandle   );
+
+  pod2usage(   -verbose => 2,
+               -noperldoc => 1  )
 
 =head1 ARGUMENTS
 
@@ -122,6 +125,14 @@ implied by C<$ENV{PATH}>. The list may be specified either by a reference
 to an array, or by a string of directory paths which use the same path
 separator as C<$ENV{PATH}> on your system (e.g., C<:> for Unix, C<;> for
 MSWin32 and DOS).
+
+=item C<-noperldoc>
+
+By default, Pod::Usage will call L<perldoc> when -verbose >= 2 is
+specified. This does not work well e.g. if the script was packed
+with L<PAR>. The -noperldoc option suppresses the external call to
+L<perldoc> and uses the simple text formatter (L<Pod::Text>) to 
+output the POD.
 
 =back
 
@@ -387,6 +398,11 @@ similar to the following:
 
     pod2usage(-exitval => 2, -input => "/path/to/your/pod/docs");
 
+In the pathological case that a script is called via a relative path
+I<and> the script itself changes the current working directory
+(see L<perlfunc/chdir>) I<before> calling pod2usage, Pod::Usage will
+fail even on robust platforms. Don't do that.
+
 =head1 AUTHOR
 
 Please report bugs using L<http://rt.cpan.org>.
@@ -503,7 +519,7 @@ sub pod2usage {
     ## Now create a pod reader and constrain it to the desired sections.
     my $parser = new Pod::Usage(USAGE_OPTIONS => \%opts);
     if ($opts{"-verbose"} == 0) {
-        $parser->select("SYNOPSIS");
+        $parser->select('SYNOPSIS\s*');
     }
     elsif ($opts{"-verbose"} == 1) {
         my $opt_re = '(?i)' .
@@ -517,7 +533,8 @@ sub pod2usage {
     }
 
     ## Now translate the pod document and then exit with the desired status
-    if ( $opts{"-verbose"} >= 2 
+    if ( !$opts{"-noperldoc"}
+             and  $opts{"-verbose"} >= 2 
              and  !ref($opts{"-input"})
              and  $opts{"-output"} == \*STDOUT )
     {

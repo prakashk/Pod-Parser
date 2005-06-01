@@ -52,4 +52,5 @@ t/pod/podselect.t     -- test input file for processing podselect.PL
 t/pod/podselect.xr    -- expected result from processing podselect.PL
 t/pod/special_seqs.t  -- test-input file for "special" interior sequences
 t/pod/special_seqs.xr -- expected result from processing special_seqs.t
+t/pod/testpods/lib/Pod/Stuff.pm -- test POD for t/pod/find.t
 META.yml                                Module meta-data (added by MakeMaker)

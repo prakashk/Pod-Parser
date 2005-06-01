@@ -10,7 +10,7 @@
 package Pod::Parser;
 
 use vars qw($VERSION);
-$VERSION = 1.30;  ## Current version of this package
+$VERSION = 1.31;  ## Current version of this package
 require  5.005;    ## requires this Perl version or later
 
 #############################################################################
@@ -1066,7 +1066,6 @@ sub parse_from_filehandle {
     while (defined ($textline = $tied_fh ? <$in_fh> : $in_fh->getline)) {
         $textline = $self->preprocess_line($textline, ++$nlines);
         next  unless ((defined $textline)  &&  (length $textline));
-        $_ = $paragraph;  ## save previous contents
 
         if ((! length $paragraph) && ($textline =~ /^==/)) {
             ## '==' denotes a one-line command paragraph
@@ -1157,7 +1156,7 @@ sub parse_from_file {
     my $self = shift;
     my %opts = (ref $_[0] eq 'HASH') ? %{ shift() } : ();
     my ($infile, $outfile) = @_;
-    my ($in_fh,  $out_fh) = (gensym, gensym)  if ($] < 5.6);
+    my ($in_fh,  $out_fh) = (gensym(), gensym())  if ($] < 5.006);
     my ($close_input, $close_output) = (0, 0);
     local *myData = $self;
     local *_;

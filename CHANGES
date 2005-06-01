@@ -1,3 +1,27 @@
+ 01-Jun-2005           Marek Rouchal                        <marekr@cpan.org>
+ -----------------------------------------------------------------------------
+ Version 1.31
+ + applied patch suggested by ITUB AT cpan.org (remove spurious setting of
+   $_), which significantly reduces runtime (CPAN#12327)
+ + fixed regression in podselect.PL and pod2usage.PL reported by Steve Peters 
+   steve AT fisharerojo.org; no change in the actual code, just the build
+   script; the fix in Pod::Usage was already in
+ + downgraded error about nested styles (e.g. C<...C<...>...>) to a warning
+   (CPAN#12240)
+ + added the brackets to gensym() to make use strict happy in Perls < 5.006
+   (CPAN#5613)
+ + pod2usage() is more tolerant wrt. =head1 SYNOPSIS\s* (CPAN#6329)
+ + require at least File::Spec 0.82 as suggested in CPAN#8709
+ + include the -noperldoc option in Pod::Usage as suggested in CPAN#11525
+   This is the last time an enhancement was implemented! >:->
+ + fixed the test t/pod/find.t to not depend on perlfunc (CPAN#6679);
+   now the test also uses t/pod/testpods/lib/Pod/Stuff.pm;
+   this implicitely fixes also CPAN#8742
+ + slightly updated META.yml
+ + made sure that CPAN#7486 is _really_ integrated
+ + make -quiet DWIM in Pod::Checker (CPAN#11884)
+
+
  12-Mar-2005           Marek Rouchal                        <marekr@cpan.org>
  -----------------------------------------------------------------------------
  Version 1.30
