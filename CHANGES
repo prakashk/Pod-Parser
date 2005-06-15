@@ -1,3 +1,10 @@
+ 15-Jun-2005           Marek Rouchal                        <marekr@cpan.org>
+ -----------------------------------------------------------------------------
+ Version 1.32
+ + applied patch by radek at pld-linux dot org that fixes a regression of
+   broken support of Pod::Parser input from objects
+ 
+
  01-Jun-2005           Marek Rouchal                        <marekr@cpan.org>
  -----------------------------------------------------------------------------
  Version 1.31
