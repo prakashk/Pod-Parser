@@ -1,3 +1,12 @@
+ 05-Sep-2005           Marek Rouchal                        <marekr@cpan.org>
+ -----------------------------------------------------------------------------
+ Version 1.33
+ + CPAN#14194: I<> in Pod::Usage overridden to just show the text, no ** around
+ + CPAN#14195: wrong exit value for pod2usage(0)
+ + CPAN#14315: allow for arbitrary URLs
+ I hope this will do now - Pod-Parser is DEAD!
+
+
  15-Jun-2005           Marek Rouchal                        <marekr@cpan.org>
  -----------------------------------------------------------------------------
  Version 1.32

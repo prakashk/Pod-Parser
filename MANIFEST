@@ -47,6 +47,7 @@ t/pod/oneline_cmds.xr -- expected result from processing oneline_cmds.t
 t/pod/poderrs.t       -- test input file for checking some POD errors
 t/pod/poderrs.xr      -- expected result from processing poderrs.t
 t/pod/pod2usage.t     -- test input file for processing pod2usage.PL
+t/pod/pod2usage2.t    -- more Pod::Usage tests
 t/pod/pod2usage.xr    -- expected result from processing pod2usage.PL
 t/pod/podselect.t     -- test input file for processing podselect.PL
 t/pod/podselect.xr    -- expected result from processing podselect.PL

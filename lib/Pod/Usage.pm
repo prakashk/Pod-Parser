@@ -10,7 +10,7 @@
 package Pod::Usage;
 
 use vars qw($VERSION);
-$VERSION = 1.31;  ## Current version of this package
+$VERSION = 1.33;  ## Current version of this package
 require  5.005;    ## requires this Perl version or later
 
 =head1 NAME
@@ -97,7 +97,8 @@ is 1, then the "SYNOPSIS" section, along with any section entitled
 corresponding value is 2 or more then the entire manpage is printed.
 
 The special verbosity level 99 requires to also specify the -section
-parameter; then these sections are extracted and printed.
+parameter; then these sections are extracted (see L<Pod::Select>)
+and printed.
 
 =item C<-section>
 
@@ -449,13 +450,16 @@ BEGIN {
 ##---------------------------------
 
 sub pod2usage {
-    local($_) = shift || "";
+    local($_) = shift;
     my %opts;
     ## Collect arguments
     if (@_ > 0) {
         ## Too many arguments - assume that this is a hash and
         ## the user forgot to pass a reference to it.
         %opts = ($_, @_);
+    }
+    elsif (!defined $_) {
+      $_ = "";
     }
     elsif (ref $_) {
         ## User passed a ref to a hash
@@ -578,6 +582,9 @@ sub select {
         $self->{USAGE_SELECT} = \@res;
     }
 }
+
+# Override Pod::Text->seq_i to return just "arg", not "*arg*".
+sub seq_i { return $_[1] }
 
 # This overrides the Pod::Text method to do something very akin to what
 # Pod::Select did as well as the work done below by preprocess_paragraph.
