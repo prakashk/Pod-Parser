@@ -25,6 +25,8 @@ t/pod/testp2pt.pl     -- module used to test Pod::PlainText for a given file
 t/pod/testpchk.pl     -- module used to test Pod::Checker for a given file
 t/pod/emptycmd.t      -- test-input file for an empty pod directive
 t/pod/emptycmd.xr     -- expected result from processing emptycmd.t
+t/pod/contains_pod.t  -- test for Pod::Find::contains_pod
+t/pod/contains_pod.xr -- test file
 t/pod/find.t          -- test for Pod::Find
 t/pod/for.t           -- test-input file for =for directives
 t/pod/for.xr          -- expected result from processing for.t

@@ -1,3 +1,15 @@
+ 04-Oct-2005           Marek Rouchal                        <marekr@cpan.org>
+ -----------------------------------------------------------------------------
+ Version 1.34
+ + yi luo luoyi.ly at gmail.com noticed that -x _ does not do the right
+   thing on Windoze with *.bat files, where -x $file does
+ + JHOBLITT at cpan.org sent a patch to make contains_pod accept files that
+   start with =head on the first line. Test integrated with slight modifications
+   (to avoid dependency on File::Temp and others)
+ + applied http://public.activestate.com/cgi-bin/perlbrowse?patch=25588
+   (thanks H.Merijn Brand and Rafael Garcia-Suarez)
+ Neverending story...
+
  05-Sep-2005           Marek Rouchal                        <marekr@cpan.org>
  -----------------------------------------------------------------------------
  Version 1.33
