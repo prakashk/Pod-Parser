@@ -1,3 +1,32 @@
+ 27-Oct-2005           Marek Rouchal                        <marekr@cpan.org>
+ -----------------------------------------------------------------------------
+ Version 1.35
+ + Did I say this package is dead?
+ + Make version of distro equal Pod::Parser::VERSION on popular
+   request - although this is IMHO not a prerequisite (CPAN#17069)
+ + Check for core changes to this module dist - there are none
+ + Added support for =head3 in Pod::PlainText - who on earth is
+   using that one? Thanks David Wheeler dwheelerATcpanDOTorg (CPAN#17515)
+ + Added support even for =head4 in Pod::PlainText (CPAN#15989)
+ + Allow Pod::Usage to work with new and old versions of Pod::Text
+   Thanks steveiATfisharerojoDOTorg for the patch (CPAN#16368)
+ + fall back to $PAGER|more if perldoc fails in Pod::Usage (CPAN#16901)
+ + CPAN#17202 is somehow solved in this release
+ + try to address CPAN#16959 by removing all extra line end characters
+   in line comparisons in test
+ + added test to catch CPAN#17997, should it ever be a problem
+ + address CPAN#19137 by a CAVEAT in Pod::Parser
+ + CPAN#19933: PATCH to support L<Weblink|http://www.whatver.site>
+   thanks LGODDARD
+ + CPAN#21010: Calling parse_from_file twice causes errors
+   my (...) = ... if(...); # is no good - had to split that
+ + CPAN#15718: Documentation: -section argument should be -sections
+ + minor change in Select.pm to solve an issue on Cygwin with ^M
+ + CPAN#17997: Regression: -input no longer works with __DATA__ with -verbose => 2
+   thanks CLOTHO for the patch
+ + ran a rough POD spell check
+
+
  04-Oct-2005           Marek Rouchal                        <marekr@cpan.org>
  -----------------------------------------------------------------------------
  Version 1.34

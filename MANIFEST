@@ -49,11 +49,13 @@ t/pod/oneline_cmds.xr -- expected result from processing oneline_cmds.t
 t/pod/poderrs.t       -- test input file for checking some POD errors
 t/pod/poderrs.xr      -- expected result from processing poderrs.t
 t/pod/pod2usage.t     -- test input file for processing pod2usage.PL
+t/pod/p2u_data.pl     -- test script for POD in __DATA__ section
 t/pod/pod2usage2.t    -- more Pod::Usage tests
 t/pod/pod2usage.xr    -- expected result from processing pod2usage.PL
 t/pod/podselect.t     -- test input file for processing podselect.PL
 t/pod/podselect.xr    -- expected result from processing podselect.PL
 t/pod/special_seqs.t  -- test-input file for "special" interior sequences
 t/pod/special_seqs.xr -- expected result from processing special_seqs.t
+t/pod/twice.t         -- make sure Pod::Parser is re-entrant
 t/pod/testpods/lib/Pod/Stuff.pm -- test POD for t/pod/find.t
 META.yml                                Module meta-data (added by MakeMaker)
