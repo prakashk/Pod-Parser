@@ -55,6 +55,9 @@
    This patch should not be applied to the main sources until the warnings 
    are cleaned up.
 
+ * In Pod::Checker, check that =encoding specifies a valid encoding;
+   possibly by using the Encode module?
+
 --- t/pod/corepods.t	2002/12/10 22:36:52	1.1
 +++ t/pod/corepods.t	2002/12/10 23:21:25
 @@ -0,0 +1,22 @@

@@ -6,11 +6,17 @@
 
 BEGIN {
     require 5.005;
-    eval { require File::Spec };
-    $@  and  die "You need to install the File::Spec module first!\n";
-	if(($File::Spec::VERSION || 0) < 0.82) {
-	  die "You need at least version 0.82 of the File::Spec module!\n";
-	}
+    if(!eval { require File::Spec; 1; } || $@) {
+        warn "Warning: prerequisite File::Spec 0.82 not found.\n".
+             "It is required to run this $0\n";
+        exit 0;
+    }
+    my $FSversion = $File::Spec::VERSION || 0;
+    if($FSversion < 0.82) {
+        warn "Warning: prerequisite File::Spec 0.82 not found. We have $FSversion.\n".
+             "It is required to run this $0\n";
+        exit 0;
+    }
 }
 
 use ExtUtils::MakeMaker;
@@ -59,13 +65,13 @@ my %prereq = (
 );
 if ($] < 5.005) {
   ## Need File::Spec if this is 5.004 or earlier
-  $prereq{'File::Spec'} = 0;
+  $prereq{'File::Spec'} = 0.82;
 }
 
 WriteMakefile(
     NAME         => $DISTMOD,
     DISTNAME     => $DISTNAME,
-    VERSION      => '1.35',
+    VERSION      => '1.36',
     INSTALLDIRS  => ($] >= 5.006 ? 'perl' : 'site'),
     PL_FILES     => { map { (script("$_.PL") => script($_)) } @SCRIPTS },
     EXE_FILES    => [ @EXE_FILES ],
@@ -77,5 +83,4 @@ WriteMakefile(
        (ABSTRACT   => 'Modules for parsing/translating POD format documents',
         AUTHOR     => 'Brad Appleton <bradapp@enteract.com>') : ()),
 );
-
 

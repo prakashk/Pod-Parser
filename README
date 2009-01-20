@@ -44,7 +44,7 @@
    The Pod::PlainText module is still provided with Pod::Parser on CPAN
    solely for backward compatibility. Once Perl 5.6 becomes the latest
    stable version of Perl, then Pod::PlainText will be removed from the
-   PodParser distribution!!
+   Pod-Parser distribution!!
 
  Pod::InputObjects
  -----------------
@@ -98,12 +98,12 @@
  this distribution and all the files in it are Copyright (C) 1996-1999
  by Brad Appleton.  All rights reserved.
 
- PodParser is free software; you can redistribute it and/or modify it
+ Pod-Parser is free software; you can redistribute it and/or modify it
  under the terms of the Artistic License distributed with Perl version
  5.000 or (at your option) any later version. Please refer to the
  Artistic License that came with your Perl distribution for more
  details. If your version of Perl was not distributed under the
- terms of the Artistic License, than you may distribute PodParser
+ terms of the Artistic License, than you may distribute Pod-Parser
  under the same terms as Perl itself.
 
  The Artistic License should have been included in your distribution of
@@ -145,7 +145,7 @@
  CONTENTS
  ========
  Please see the file named "MANIFEST" which should have been included
- in the PodParser distribution.
+ in the Pod-Parser distribution.
 
 
  REQUIREMENTS
@@ -170,15 +170,15 @@
  BUGS
  ====
  Please use the CPAN bug tracking to report bugs:
- http://rt.cpan.org/NoAuth/Bugs.html?Dist=PodParser
+ http://rt.cpan.org/NoAuth/Bugs.html?Dist=Pod-Parser
 
  TO DO
  =====
  Please see the file named "TODO" which should have been included
- in the PodParser distribution.
+ in the Pod-Parser distribution.
 
  HISTORY
  =======
  Please see the file named "CHANGES" which should have been included
- in the PodParser distribution.
+ in the Pod-Parser distribution.
 

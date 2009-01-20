@@ -58,4 +58,10 @@ t/pod/special_seqs.t  -- test-input file for "special" interior sequences
 t/pod/special_seqs.xr -- expected result from processing special_seqs.t
 t/pod/twice.t         -- make sure Pod::Parser is re-entrant
 t/pod/testpods/lib/Pod/Stuff.pm -- test POD for t/pod/find.t
+t/pod/contains_bad_pod.xr -- expected results
+t/pod/podchkenc.t     -- validate =encoding support
+t/pod/podchkenc.xr    -- expected results for the above
+t/pod/usage.pod       -- test POD for pod2usage tests
+t/pod/usage2.pod      -- test POD for pod2usage tests
+
 META.yml                                Module meta-data (added by MakeMaker)
