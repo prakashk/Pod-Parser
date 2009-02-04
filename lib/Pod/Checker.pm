@@ -11,7 +11,7 @@ package Pod::Checker;
 use strict;
 
 use vars qw($VERSION @ISA @EXPORT %VALID_COMMANDS %VALID_SEQUENCES);
-$VERSION = '1.44';  ## Current version of this package
+$VERSION = '1.45';  ## Current version of this package
 require  5.005;    ## requires this Perl version or later
 
 use Pod::ParseUtils; ## for hyperlinks and lists
@@ -864,7 +864,7 @@ sub command {
                   $self->{_list_item_contents} = $1 ? 1 : 0;
                   $arg = $1;
                 }
-                elsif($arg =~ /^\d+\.?\s*(\S*)/) {
+                elsif($arg =~ /^\d+\.?\s+(\S*)/) {
                   $type = 'number';
                   $self->{_list_item_contents} = $1 ? 1 : 0;
                   $arg = $1;

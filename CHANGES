@@ -3,6 +3,28 @@ ATTENTION!
 Before using this for any _new_ software, please consider using Pod::Simple,
 it is a modern replacement for this module.
 
+ 04-Feb-2008           Marek Rouchal                        <marekr@cpan.org>
+ -----------------------------------------------------------------------------
+ Version 1.37
+ + fixed resource links in META.yml
+ + address CPAN#42695 with a minor change in PlainText, although not solving
+   it completely; the 'loose' option now applies to all =headN headings
+ + address failures of find.t on Win32 (cpantesters) - root cause was a 
+   mismatch of directory names like "Progra~1" (short/long file names)
+ + include the following bleadperl changes:
+   * Blank lines "between" verbatim sections are now acceptible:
+     http://perl5.git.perl.org/perl.git/commitdiff/caa547d
+   * Be less picky about what constitutes "numeric lists" in Pod:
+     http://perl5.git.perl.org/perl.git/commitdiff/4df4f5d
+   * Changes made to contains_pod.t when upgrading to 1.34:
+     http://perl5.git.perl.org/perl.git/commitdiff/fb59f97
+   * Fix paths on new pod2usage2 tests to work in the core.
+     http://perl5.git.perl.org/perl.git/commitdiff/222046efb22c183703fea2b30db76296ab782e89
+   * Make t/pod/pod2usage2.t work on case insensitive file systems.
+     http://perl5.git.perl.org/perl.git/commitdiff/767c16ab361d1225fb153423fb22b590c1e0c7ea
+   Thanks to Nicholas Clark, Steve Hay, Jerry D. Hedden for the patches
+ + removed \r from t/pod/usage2.pod
+
 
  19-Jan-2008           Marek Rouchal                        <marekr@cpan.org>
  -----------------------------------------------------------------------------
