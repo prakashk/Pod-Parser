@@ -3,6 +3,13 @@ ATTENTION!
 Before using this for any _new_ software, please consider using Pod::Simple,
 it is a modern replacement for this module.
 
+ 09-Feb-2008           Marek Rouchal                        <marekr@cpan.org>
+ -----------------------------------------------------------------------------
+ Version 1.38
+ + missed one (important) line from one of the patches below in pod2usage2.t
+   No change in the *.pm files
+
+
  04-Feb-2008           Marek Rouchal                        <marekr@cpan.org>
  -----------------------------------------------------------------------------
  Version 1.37
